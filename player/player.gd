@@ -34,7 +34,7 @@ func death():
 	pass
 
 func _ready():
-	$AnimatedSprite.play("run")
+	$AnimatedGoose.play("run")
 	randomize()
 
 func _physics_process(delta):
@@ -59,17 +59,18 @@ func _physics_process(delta):
 		falling_slow = true
 	# Check if on floor and do mostly animation stuff based on it.
 	if is_on_floor():
-		if no_move_horizontal_time > 0:
-			no_move_horizontal_time = no_move_horizontal_time -1
-			if no_move_horizontal_time == 0:
-				death()
-		else:
+		if no_move_horizontal_time == 0:
 			if velocity.x == 0:
 				no_move_horizontal_time = 100
-				
-				
+				$AnimatedGoose.play("dizzy")
+				$AnimatedGoose.position.y = -15
+				get_parent().get_node("CanvasLayer2/Control/RichTextLabel").text = "¿Seguir?"
 			if (Input.is_action_just_pressed("jump") or screenTouched):
 				velocity.y = -speed.y
+		else:
+			if (Input.is_action_just_pressed("jump") or screenTouched):
+				get_parent().get_node("CanvasLayer2/Control/RichTextLabel").text = ""
+				get_tree().reload_current_scene()
 		if falling_fast:
 			falling_fast = false
 		elif falling_slow:
