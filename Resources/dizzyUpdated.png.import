@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gBot.png-b94e4323e02d18e8c6fabf612fa396da.stex"
+path="res://.import/dizzyUpdated.png-2c53af1797769540609f90dc26d28b83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/gBot.png"
-dest_files=[ "res://.import/gBot.png-b94e4323e02d18e8c6fabf612fa396da.stex" ]
+source_file="res://Resources/dizzyUpdated.png"
+dest_files=[ "res://.import/dizzyUpdated.png-2c53af1797769540609f90dc26d28b83.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

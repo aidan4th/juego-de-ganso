@@ -19,8 +19,13 @@ var speedMod = 0
 var modChange = 0.05
 var speedM = 0
 var screenTouched = false
-var preloadedPlat = [preload("res://level/Levels/HasDip.tscn"), preload("res://level/Levels/Plain.tscn"), preload("res://level/Levels/VerticalLevl.tscn"), preload("res://level/Levels/ActuallyHardOne.tscn")]
+var preloadedPlat = [preload("res://level/Levels/testingKids.tscn"), preload("res://level/Levels/testingKidsDoubleJump.tscn"), preload("res://level/Levels/ActuallyHardOne.tscn")]
 
+#Actually fun levels that had to be cut
+#preload("res://level/Levels/HasDip.tscn")
+#preload("res://level/Levels/Plain.tscn")
+#preload("res://level/Levels/VerticalLevl.tscn")
+#preload("res://level/Levels/ActuallyHardOne.tscn")
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -52,11 +57,6 @@ func _physics_process(delta):
 		pass
 	elif velocity.x < 0:
 		pass
-	if velocity.y > 500:
-		falling_fast = true
-		falling_slow = false
-	elif velocity.y > 300:
-		falling_slow = true
 	# Check if on floor and do mostly animation stuff based on it.
 	if is_on_floor():
 		if no_move_horizontal_time == 0:
@@ -71,21 +71,7 @@ func _physics_process(delta):
 			if (Input.is_action_just_pressed("jump") or screenTouched):
 				get_parent().get_node("CanvasLayer2/Control/RichTextLabel").text = ""
 				get_tree().reload_current_scene()
-		if falling_fast:
-			falling_fast = false
-		elif falling_slow:
-			falling_slow = false
-		if abs(velocity.x) > 50:
-			pass
-		elif velocity.x:
-			pass
-		else:
-			pass
-	else:
-		if velocity.y > 0:
-			pass
-		else:
-			pass
+
 
 func createNewLevel():
 	var levelInstance = preloadedPlat[randi() % len(preloadedPlat)].instance()
