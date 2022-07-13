@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Label" type="Label"]
+margin_left = 297.0
+margin_top = 405.0
+margin_right = 337.0
+margin_bottom = 419.0
+text = "\"Juego de Ganso\" De Aidan Forth"

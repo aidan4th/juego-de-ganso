@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://Duck.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 6.11189, 6.4818 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="SkeletalPlayer" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 379.019 ]
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.11189, -6.5182 )
+shape = SubResource( 24 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -32 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, -16 )
+scale = Vector2( 0.144531, 0.238281 )
+frames = SubResource( 25 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1, -14 )
+scale = Vector2( 0.46875, 0.546875 )
+texture = ExtResource( 2 )
