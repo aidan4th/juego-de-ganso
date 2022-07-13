@@ -34,6 +34,7 @@ func death():
 	pass
 
 func _ready():
+	$AnimatedSprite.play("run")
 	randomize()
 
 func _physics_process(delta):
@@ -64,7 +65,8 @@ func _physics_process(delta):
 				death()
 		else:
 			if velocity.x == 0:
-				no_move_horizontal_time = 100ç
+				no_move_horizontal_time = 100
+				
 				
 			if (Input.is_action_just_pressed("jump") or screenTouched):
 				velocity.y = -speed.y
