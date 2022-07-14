@@ -81,7 +81,7 @@ func _on_Ressetter_body_entered(body):
 	if body.name == "SkeletalPlayer":
 		createNewLevel()
 		get_parent().find_node("Ressetter").translate(Vector2(830,0))
-		#speedMod = speedMod + modChange
+		speedMod = speedMod + modChange
 		speedM = sqrt(speedMod)
 		get_parent().get_node("CanvasLayer/Control/RichTextLabel").text = "puntaje: " + str(speedMod/modChange)
 
